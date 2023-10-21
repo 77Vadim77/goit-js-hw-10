@@ -1,13 +1,28 @@
-import axios from "axios"
+import axios from 'axios'//
+import Notiflix from  'notiflix' 
 
+const URL = 'https://api.thecatapi.com/v1';
+const API_KEY =
+  'live_0WOFEAEoCf5hcRRzqNujEbC1vO0z01lukexemHRNRkp0tnkbzaVvxRmO0CJ8T2ZW';
 
-axios.defaults.headers.common["x-api-key"] = "live_fTnlBiJcKBYHaBpRRamKH2se5xkBiHmNKlI2CEiGLgh4WVXICOW8An4nHdCuGoeV";
 export function fetchBreeds() {
-    return fetch(`${url}/breeds?api_key=${ali_key}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(response.status);
-            }
-            return response.jsone();
-        });
-};
+  return fetch(`${URL}/breeds?api_key=${API_KEY}`).then(response => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    return response.json();
+  });
+}
+
+export function fetchCatByBreed(breedId) {
+  return fetch(
+    `${URL}/images/search?api_key=${API_KEY}&breed_ids=${breedId}`
+  ).then(response => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    return response.json();
+  });
+}
+
+
