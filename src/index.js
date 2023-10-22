@@ -35,6 +35,7 @@ new SlimSelect({
       });
     })
     .catch(onError);
+  
 }
 
 selectEl.addEventListener('change', onChangeSelect);
