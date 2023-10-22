@@ -32,24 +32,20 @@ p {
 .cat-info {
     margin-top: 20px;
     padding: 20px;
-    /* display: flex; */
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    /* background-color: #e5f3f2;
-  border: 1px solid #0d161b; */
 }
 
 .box-img {
     display: flex;
-    /* align-items: center; */
 }
 
 .box {
     width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
 }
 
 .loader {
@@ -59,7 +55,20 @@ p {
     animation: heartBeat 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-
+.loader:before,
+.loader:after {
+    content: '';
+    background: #26eb03e5;
+    width: 45px;
+    height: 65px;
+    border-radius: 50px 50px 0 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: rotate(45deg);
+    transform-origin: 50% 68%;
+    box-shadow: 5px 4px 4px #0004 inset;
+}
 
 .loader:after {
     transform: rotate(-45deg);
